@@ -18,6 +18,7 @@ import com.BrickDestroyView.GameBoardView;
  * All Key and Mouse Events that occur in the <code>GameBoardView</code>, the <code>GameBoard</code>'s <code>View</code>, are handled.
  */
 
+
 public class GameBoardController implements KeyListener, MouseListener, MouseMotionListener {
 	
 	private GameBoardView view;
@@ -27,6 +28,7 @@ public class GameBoardController implements KeyListener, MouseListener, MouseMot
 	 * @param owner The <code>JFrame</code> in which the game will be played.
 	 */
 	
+
 	public GameBoardController(JFrame owner) {
 		model = new GameBoardModel(this);
 		view = new GameBoardView (owner, this);
@@ -65,6 +67,7 @@ public class GameBoardController implements KeyListener, MouseListener, MouseMot
         }
     }
 	
+
     @Override
     public void keyReleased(KeyEvent keyEvent) {
     	model.getWall().getPlayer().stop();
@@ -82,6 +85,7 @@ public class GameBoardController implements KeyListener, MouseListener, MouseMot
         }
         else if(view.getRestartButtonRect().contains(point)){
             model.setMessage("Restarting Game. Press SPACE to start.");
+
             model.getWall().ballReset();
             model.getWall().wallReset();
             model.setShowPauseMenu(false);
@@ -144,6 +148,7 @@ public class GameBoardController implements KeyListener, MouseListener, MouseMot
     public void onLostFocus(){
         model.getGameTimer().stop();
         model.setMessage("Focus Lost. Press SPACE to Continue.");
+
         view.repaint();
     }
 

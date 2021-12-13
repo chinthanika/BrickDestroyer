@@ -1,3 +1,4 @@
+
 package com.BrickDestroyModel;
 
 import javax.swing.*;
@@ -23,7 +24,6 @@ public class DebugConsoleModel extends JDialog{
 
 
     private JFrame owner;
-
     /**
      * @param view The <code>DebugConsole</code>'s <code>View</code>.
      * @param owner The <code>JFrame</code> in which the game will be played.

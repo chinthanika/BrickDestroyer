@@ -1,3 +1,4 @@
+
 package com.BrickDestroyView;
 
 import java.awt.AlphaComposite;
@@ -129,7 +130,7 @@ public class GameBoardView extends JComponent {
 
         g2d.setColor(tmp);
     }
-    
+
     private void drawBall(Ball ball,Graphics2D g2d){
         Color tmp = g2d.getColor();
 
@@ -143,7 +144,6 @@ public class GameBoardView extends JComponent {
 
         g2d.setColor(tmp);
     }
-
 
     private void drawPlayer(Player p,Graphics2D g2d){
         Color tmp = g2d.getColor();
@@ -209,14 +209,14 @@ public class GameBoardView extends JComponent {
         g2d.drawString(CONTINUE,x,y);
 
         y *= 2;
-        
+
         if(getRestartButtonRect() == null){
             setRestartButtonRect((Rectangle) getContinueButtonRect().clone());
             getRestartButtonRect().setLocation(x,y-getRestartButtonRect().height);
         }
 
         g2d.drawString(RESTART,x,y);
-        
+
         y *= 3.0/2;
 
         if(getExitButtonRect() == null){

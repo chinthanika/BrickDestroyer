@@ -1,3 +1,4 @@
+
 package com.BrickDestroyView;
 
 import javax.swing.*;
@@ -46,7 +47,7 @@ public class HomeMenuView extends JComponent {
     private Font creditsFont;
     private Font buttonFont;
 	private HomeMenuModel model;
-
+  
 	/**
 	 * @param model The <code>HomeMenu</code>'s <code>Model</code> Class.
 	 * @param owner The <code>JFrame</code> in which the game will be played.

@@ -1,7 +1,9 @@
+
 package com.BrickDestroyView;
 
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
+
 
 import com.Objects.Wall;
 
@@ -31,7 +33,7 @@ public class DebugConsoleView extends JPanel {
     /**
      * @param wall The <code>Wall</code> in which the <code>Ball</code> and <code>Player</code> are instantiated.
      */
-    
+
     public DebugConsoleView(Wall wall){
 
         initialize();

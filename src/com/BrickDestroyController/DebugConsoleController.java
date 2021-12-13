@@ -5,7 +5,6 @@ import java.awt.event.WindowListener;
 
 import javax.swing.JFrame;
 
-//import com.OG.BallModel;
 import com.BrickDestroyModel.DebugConsoleModel;
 import com.BrickDestroyView.DebugConsoleView;
 import com.BrickDestroyView.GameBoardView;
@@ -15,6 +14,7 @@ import com.Objects.Wall;
 /** This is the <code>Controller</code> for the <code>DebugConsole</code>, which allows the user to skip levels and change the number of balls.
  * All Window Events that occur in the <code>DebugConsoleView</code>, the <code>DebugConsle</code>'s <code>View</code>, are handled.
  */
+
 
 public class DebugConsoleController implements WindowListener{
 	
@@ -28,6 +28,7 @@ public class DebugConsoleController implements WindowListener{
  * @param wall The <code>Wall</code> in which the <code>Ball</code> and <code>Player</code> are instantiated.
  * @param gameBoard The <code>GameBoardView</code> in which the DebugConsole will be rendered.
  */
+
 	public DebugConsoleController(JFrame owner,Wall wall,GameBoardView gameBoard) {
 		
 		this.gameBoard = gameBoard;
