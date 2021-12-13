@@ -1,20 +1,4 @@
-/*
- *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+
 package com.BrickDestroyModel;
 
 import javax.swing.*;
@@ -23,13 +7,16 @@ import java.awt.*;
 
 import com.BrickDestroyView.DebugConsoleView;
 import com.BrickDestroyView.GameBoardView;
-import com.OG.Wall;
+import com.Objects.Wall;
+
+/**
+ * This is the <code>Model</code> for the <code>DebugConsole</code>, which allows the user to skip levels and change the number of balls.
+ * All fields that maintain a state are held.
+ */
+
 
 public class DebugConsoleModel extends JDialog{
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 
@@ -37,7 +24,13 @@ public class DebugConsoleModel extends JDialog{
 
 
     private JFrame owner;
-
+    /**
+     * @param view The <code>DebugConsole</code>'s <code>View</code>.
+     * @param owner The <code>JFrame</code> in which the game will be played.
+     * @param wall The <code>Wall</code> in which the <code>Ball</code> and <code>Player</code> are instantiated.
+     * @param gameBoard The <code>GameBoardView</code> in which the DebugConsole will be rendered.
+     */
+    
     public DebugConsoleModel(DebugConsoleView view, JFrame owner,Wall wall,GameBoardView gameBoard){
         this.owner = owner;
         initialize();

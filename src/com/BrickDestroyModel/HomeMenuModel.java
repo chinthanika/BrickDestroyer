@@ -1,5 +1,10 @@
 package com.BrickDestroyModel;
 
+/**
+ * This is the <code>Model</code> for the <code>HomeMenu</code>, which renders the introductory screen.
+ * All fields that maintain a state are held.
+ */
+
 public class HomeMenuModel {
 
     private boolean startClicked;

@@ -1,37 +1,23 @@
-/*
- *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+
 package com.BrickDestroyView;
 
 import javax.swing.*;
 
 import com.BrickDestroyModel.HomeMenuModel;
-import com.OG.GameFrame;
+import com.Objects.GameFrame;
 
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
+/**
+ * This is the <code>View</code> for the <code>HoemMenu</code>, which renders the screen in which the user will play the game.
+ * All requisite components, buttons, etc are rendered to the <code>JComponent</code>.
+ * All listeners in the <code>HomeMenu</code>'s <code>Controller</code> listen to this class.
+ */
 
 public class HomeMenuView extends JComponent {
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private static final String GREETINGS = "Welcome to:";
     private static final String GAME_TITLE = "Brick Destroy";
@@ -61,7 +47,13 @@ public class HomeMenuView extends JComponent {
     private Font creditsFont;
     private Font buttonFont;
 	private HomeMenuModel model;
-
+  
+	/**
+	 * @param model The <code>HomeMenu</code>'s <code>Model</code> Class.
+	 * @param owner The <code>JFrame</code> in which the game will be played.
+	 * @param area The <code>Dimension</code> of the <code>HomeMenu</code>.
+	 */
+	
     public HomeMenuView(HomeMenuModel model,GameFrame owner,Dimension area){
 
     	this.model = model;

@@ -9,7 +9,13 @@ import java.awt.event.MouseMotionListener;
 
 import com.BrickDestroyModel.HomeMenuModel;
 import com.BrickDestroyView.HomeMenuView;
-import com.OG.GameFrame;
+import com.Objects.GameFrame;
+
+/**
+ * This is the <code>Controller</code> for the <code>HomeMenu</code>, which is the introductory screen.
+ * All Mouse Events that occur in the <code>HomeMenuView</code>, the <code>DebugConsle</code>'s <code>View</code>, are handled.
+ */
+
 
 public class HomeMenuController implements MouseListener, MouseMotionListener {
 	
@@ -17,11 +23,16 @@ public class HomeMenuController implements MouseListener, MouseMotionListener {
 	private HomeMenuModel model;
 	private GameFrame owner;
 
-	public HomeMenuController(GameFrame owner,Dimension area) {
+	/** 
+	 * @param gameFrame The <code>GameFrame</code> in which the game will be played.
+	 * @param area The <code>Dimension</code> of the <code>HomeMenu</code>.
+	 */
+	
+	public HomeMenuController(GameFrame gameFrame,Dimension area) {
 		
-		this.owner = owner;
+		this.owner = gameFrame;
 		model = new HomeMenuModel();
-		view = new HomeMenuView(model, owner, area);
+		view = new HomeMenuView(model, gameFrame, area);
 
         view.addMouseListener(this);
         view.addMouseMotionListener(this);

@@ -7,7 +7,12 @@ import javax.swing.Timer;
 
 import com.BrickDestroyController.GameBoardController;
 import com.BrickDestroyView.GameBoardView;
-import com.OG.Wall;
+import com.Objects.Wall;
+
+/**
+ * This is the <code>Model</code> for the <code>GameBoard</code>, which renders the screen in which the user will play the game.
+ * All fields that maintain a state are held.
+ */
 
 public class GameBoardModel {
 
@@ -19,6 +24,10 @@ public class GameBoardModel {
 
     private String message;
 
+    /**
+     * @param controller The <code>GameBoard</code>'s <code>Controller</code>.
+     */
+    
     public GameBoardModel (GameBoardController controller) {
     	
     	showPauseMenu = false;

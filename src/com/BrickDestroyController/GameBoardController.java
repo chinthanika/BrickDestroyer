@@ -13,10 +13,21 @@ import javax.swing.JFrame;
 import com.BrickDestroyModel.GameBoardModel;
 import com.BrickDestroyView.GameBoardView;
 
+/**
+ * This is the <code>Controller</code> for the <code>GameBoard</code>, which renders the screen in which the user will play the game.
+ * All Key and Mouse Events that occur in the <code>GameBoardView</code>, the <code>GameBoard</code>'s <code>View</code>, are handled.
+ */
+
+
 public class GameBoardController implements KeyListener, MouseListener, MouseMotionListener {
 	
 	private GameBoardView view;
 	private GameBoardModel model;
+
+	/**
+	 * @param owner The <code>JFrame</code> in which the game will be played.
+	 */
+	
 
 	public GameBoardController(JFrame owner) {
 		model = new GameBoardModel(this);
@@ -55,6 +66,7 @@ public class GameBoardController implements KeyListener, MouseListener, MouseMot
                 model.getWall().getPlayer().stop();
         }
     }
+	
 
     @Override
     public void keyReleased(KeyEvent keyEvent) {
@@ -69,9 +81,11 @@ public class GameBoardController implements KeyListener, MouseListener, MouseMot
         if(view.getContinueButtonRect().contains(point)){
             model.setShowPauseMenu(false);
             view.repaint();
+            model.getGameTimer().start();
         }
         else if(view.getRestartButtonRect().contains(point)){
-            model.setMessage("Restarting Game...");
+            model.setMessage("Restarting Game. Press SPACE to start.");
+
             model.getWall().ballReset();
             model.getWall().wallReset();
             model.setShowPauseMenu(false);
@@ -133,7 +147,8 @@ public class GameBoardController implements KeyListener, MouseListener, MouseMot
 
     public void onLostFocus(){
         model.getGameTimer().stop();
-        model.setMessage("Focus Lost");
+        model.setMessage("Focus Lost. Press SPACE to Continue.");
+
         view.repaint();
     }
 

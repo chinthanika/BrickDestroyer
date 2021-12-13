@@ -1,37 +1,4 @@
-/*
- *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-/*
- *  Brick Destroy - A simple Arcade video game
- *   Copyright (C) 2017  Filippo Ranza
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+
 package com.BrickDestroyView;
 
 import java.awt.AlphaComposite;
@@ -52,17 +19,18 @@ import javax.swing.JFrame;
 import com.BrickDestroyController.DebugConsoleController;
 import com.BrickDestroyController.GameBoardController;
 import com.BrickDestroyModel.DebugConsoleModel;
-import com.OG.Ball;
-import com.OG.Brick;
-import com.OG.Player;
+import com.Objects.Ball;
+import com.Objects.Brick;
+import com.Objects.Player;
 
-
+/**
+ * This is the <code>View</code> for the <code>GameBoard</code>, which renders the screen in which the user will play the game.
+ * All requisite components, buttons, etc are rendered to the <code>JComponent</code>.
+ * All listeners in the <code>GameBoard</code>'s <code>Controller</code> listen to this class.
+ */
 
 public class GameBoardView extends JComponent {
-	
-    /**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private static final String CONTINUE = "Continue";
     private static final String RESTART = "Restart";
@@ -83,12 +51,18 @@ public class GameBoardView extends JComponent {
     private Rectangle continueButtonRect;
     private Rectangle exitButtonRect;
     private Rectangle restartButtonRect;
+    private Rectangle highScoresButtonRect;
     private int strLen;
 
     private DebugConsoleController debugConsole;
     
 	private GameBoardController controller;
 
+	/**
+	 * @param owner The <code>JFrame</code> in which the game will be played.
+	 * @param controller The <code>GameBoard</code>'s <code>Controller</code> Class.
+	 */
+	
     public GameBoardView(JFrame owner, GameBoardController controller){
         super();
 
@@ -307,5 +281,15 @@ public class GameBoardView extends JComponent {
 	public void setExitButtonRect(Rectangle exitButtonRect) {
 		this.exitButtonRect = exitButtonRect;
 	}
+	
+	public Rectangle getHighScoresButtonRect() {
+		return highScoresButtonRect;
+		
+	}
+	
+	public void setHighScoresButtonRect(Rectangle highScoresButtonRect) {
+		this.highScoresButtonRect = highScoresButtonRect;
+	}
 
 }
+
